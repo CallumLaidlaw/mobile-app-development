@@ -1,0 +1,29 @@
+{
+  "name": "nuxt3-pwa",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --public",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.8.2",
+    "@nuxt/icon": "^2.1.0",
+    "@nuxt/ui": "^4.2.1",
+    "better-sqlite3": "^12.4.5",
+    "firebase": "^12.6.0",
+    "firebase-admin": "^13.6.0",
+    "nuxt": "^4.2.1",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.24",
+    "vue-router": "^4.6.3",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vite-pwa/nuxt": "^1.0.7",
+    "valibot": "^1.1.0"
+  }
+}

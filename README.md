@@ -1,6 +1,8 @@
 # Start the app
 
-Run
+First rename .env.template to .env
+
+Then run
 ```
 npm run generate
 then

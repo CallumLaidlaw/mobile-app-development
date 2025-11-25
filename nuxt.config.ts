@@ -2,16 +2,25 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/ui', '@nuxt/content', '@vite-pwa/nuxt', '@nuxt/icon'],
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/content',
+    '@vite-pwa/nuxt',
+    '@nuxt/icon',
+    'nuxt-vuefire'
+  ],
   css: ['~/assets/css/main.css'],
   devServer: {
     port: 3000
   },
-  plugins: ['~/plugins/firebase.ts'],
+  components: [{
+    path: '~/components',
+    pathPrefix: false
+  }],
   pwa: {
     manifest: {
-      name: "Recipe App",
-      short_name: "Recipes",
+      name: "PortionPro",
+      short_name: "PortionPro",
       description: "A simple app helping to browse and manage recipes",
       icons: [
         {
@@ -43,5 +52,24 @@ export default defineNuxtConfig({
       enabled: true,
       type: 'module'
     }
-  }
+  },
+  vuefire: {
+    config: {
+      apiKey: process.env.apiKey,
+      authDomain: process.env.authDomain,
+      projectId: process.env.projectId,
+      storageBucket: process.env.storageBucket,
+      messagingSenderId: process.env.messagingSenderId,
+      appId: process.env.appId,
+      measurementId: process.env.messasurementId
+    },
+    auth: {
+      enabled: true,
+      sessionCookie: true
+    }
+  },
+  app: {
+    baseURL: './',
+  },
+  ssr: false
 })
